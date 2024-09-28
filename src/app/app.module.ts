@@ -13,6 +13,7 @@ import { MenuComponent } from './shared/component/menu/menu.component';
 import { UserComponent } from './modules/user/user.component';
 import { AreaComponent } from './modules/area/area.component';
 import { ModalCrearEditarUserComponent } from './modules/user/modal-crear-editar-user/modal-crear-editar-user.component';
+import { ModalCrearEditarAreaComponent } from './modules/area/modal-crear-editar-area/modal-crear-editar-area.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ModalCrearEditarUserComponent } from './modules/user/modal-crear-editar
     MenuComponent,
     UserComponent,
     AreaComponent,
-    ModalCrearEditarUserComponent
+    ModalCrearEditarUserComponent,
+    ModalCrearEditarAreaComponent
   ],
   imports: [
     BrowserModule,

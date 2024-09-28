@@ -15,15 +15,19 @@ export class AreaService {
     return this.http.get<IArea[]>(this.apiUrl);
   }
 
-  createArea(area: IArea): Observable<IArea> {
-    return this.http.post<IArea>(this.apiUrl, area);
+  getAreaById(id: number): Observable<IArea> {
+    return this.http.get<IArea>(`${this.apiUrl}/${id}`)
   }
 
-  updateArea(area: IArea): Observable<IArea> {
-    return this.http.put<IArea>(`${this.apiUrl}/${area.codigo}`, area);
+  createArea(user: IArea): Observable<IArea> {
+    return this.http.post<IArea>(this.apiUrl, user)
   }
 
-  deleteArea(codigo: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${codigo}`);
+  updateArea(user: IArea): Observable<IArea> {
+    return this.http.put<IArea>(`${this.apiUrl}/${user.id}`, user)
+  }
+
+  deleteArea(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`)
   }
 }

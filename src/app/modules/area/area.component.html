@@ -1,1 +1,43 @@
 <app-menu></app-menu>
+<div class="container mt-3">
+    <h1  class="text-center">Gestión de Areas</h1>
+    <button mat-raised-button color="primary" (click)="openDialog(0)">Crear Area</button>
+    
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 demo-table">
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef> Codigo de area </th>
+          <td mat-cell *matCellDef="let user"> {{ user.codigo }} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre del area </th>
+          <td mat-cell *matCellDef="let user"> {{ user.nombre }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lider">
+            <th mat-header-cell *matHeaderCellDef> Lider del area </th>
+            <td mat-cell *matCellDef="let user"> {{ user.lider }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let user"> {{ user.estado }} </td>
+          </ng-container>
+      
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let user">
+            <button class="btn nuevo"(click)="openDialog(user.id)">Editar</button>
+            <button class="btn danger mt-1" (click)="deleteUser(user.id)">Eliminar</button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    <div class="card-footer text-body-secondary">
+        <mat-paginator [pageSizeOptions]="[10, 20, 35]" showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+  </div>

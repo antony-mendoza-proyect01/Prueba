@@ -35,6 +35,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 20px; /* Añade esquinas redondeadas si es necesario */
     transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
   }
+  .btn.danger {
+    display: block; /* Utiliza un contenedor flexible para centrar horizontalmente */
+    width: 100%;
+    justify-content: center; /* Centra horizontalmente los elementos en el contenedor */
+    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+    background: linear-gradient(45deg, #e12525,  #c26161 ) ;/* Color de fondo azul por defecto */
+  
+    color: white; /* Color del texto en blanco por defecto */
+    padding: 5px 15px; /* Ajusta el espaciado y el tamaño según tus preferencias */
+    text-decoration: none; /* Elimina el subrayado de los enlaces si es necesario */
+    border: none; /* Elimina el borde si es necesario */
+    border-radius: 20px; /* Añade esquinas redondeadas si es necesario */
+    transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
+  }
   .volver{
     border-radius: 50px;
     background: linear-gradient(45deg, #6ca3c7,  #2286c9 );

@@ -40,14 +40,14 @@
       "id": "1",
       "codigo": 1,
       "nombre": "Desarrollo",
-      "lider": 1234567,
+      "lider": "Tony",
       "estado": "Activo"
     },
     {
-      "id": "2",
-      "codigo": 2,
-      "nombre": "Marketing",
-      "lider": 2345678,
+      "id": "9d33",
+      "codigo": 101,
+      "nombre": "Desarrollo 1",
+      "lider": "Antony",
       "estado": "Activo"
     }
   ]

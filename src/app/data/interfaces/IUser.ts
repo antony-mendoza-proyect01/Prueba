@@ -8,4 +8,6 @@ export interface IUser {
     area: number;         // Longitud 2
     salario: number;      // Decimal – Longitud 10 con 2 decimales
     estado: 'Activo' | 'Inactivo'; // Activo por defecto
+    areaNombre?: string; // Nombre del área como propiedad adicional
+
   }

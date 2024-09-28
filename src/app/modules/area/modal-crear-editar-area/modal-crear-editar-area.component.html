@@ -1,0 +1,48 @@
+<div class="modal-header title">
+    <h3 class="modal-title"> {{ isEditMode ? 'EDITAR AREA' : 'CREAR AREA' }}</h3>
+  </div>
+
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div class="row mt-3">
+        <div class="col-6">
+            <mat-form-field>
+            <mat-label>Codigo del area</mat-label>
+            <input type="number" matInput formControlName="codigo"  required />
+            <mat-error *ngIf="form.get('codigo')?.hasError('required')">Este campo es requerido</mat-error>
+          </mat-form-field> 
+        </div>
+
+        
+        <div class="col-6">
+            <mat-form-field>
+                <mat-label>Nombre del area</mat-label>
+              <input matInput formControlName="nombre"  required />
+              <mat-error *ngIf="form.get('nombre')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field> 
+        </div>
+
+        <div class="col-6">
+            <mat-form-field>
+                <mat-label>Lider del area</mat-label>
+              <input matInput formControlName="lider"  required />
+              <mat-error *ngIf="form.get('lider')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field> 
+        </div>
+
+        <div class="col-6">
+            <mat-form-field>
+                <mat-label>Estado</mat-label>
+              <mat-select formControlName="estado">
+                <mat-option value="Activo">Activo</mat-option>
+                <mat-option value="Inactivo">Inactivo</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onSave()" cdkFocusInitial>{{ isEditMode ? 'Actualizar' : 'Crear' }}</button>
+</mat-dialog-actions>
