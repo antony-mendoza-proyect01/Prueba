@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* STYLE LOGIN */
+.imgGeneral{
+    width: 50px;
+    height: 100%;
+  }
+  .imgini{
+    width: 33%;
+    height: 100%;
+    margin-left: 33%;
+  }
+  .imgfinal{
+    width: 60%;
+    height: 100%;
+    margin-left: 40%;
+  }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* STYLE BUTON */
+
+.btn.nuevo {
+    display: block; /* Utiliza un contenedor flexible para centrar horizontalmente */
+    width: 100%;
+    justify-content: center; /* Centra horizontalmente los elementos en el contenedor */
+    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+    background: linear-gradient(45deg, #6ca3c7,  #2286c9 ) ;/* Color de fondo azul por defecto */
+  
+    color: white; /* Color del texto en blanco por defecto */
+    padding: 5px 15px; /* Ajusta el espaciado y el tamaño según tus preferencias */
+    text-decoration: none; /* Elimina el subrayado de los enlaces si es necesario */
+    border: none; /* Elimina el borde si es necesario */
+    border-radius: 20px; /* Añade esquinas redondeadas si es necesario */
+    transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
+  }
+  .volver{
+    border-radius: 50px;
+    background: linear-gradient(45deg, #6ca3c7,  #2286c9 );
+    border: none;
+    color: #fff;
+    padding: 5px 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* STYLE INPUT */
+
+.input-100{
+    width: 100%;
+  }
+  .input-75{
+    width: 75%;
+  }
+  .input-60{
+    width: 60%;
+  }
+  .input-50{
+    width: 50%;
+  }
+
+/* STYLE navbar */
+.custom-navbar {
+    background: linear-gradient(to right, #301da8, #6ab0ee); /* Degradado de color */
+  }
+  .navbar .navbar-nav  .nav-link {
+    color: #ffffff; 
+  }
+  .navbar .navbar-nav .nav-link:hover {
+    color: #07cdff; 
+  }
+
+
+/* style modal */
+
+
+  .title {
+    background: linear-gradient(45deg, #6ca3c7, #2286c9);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  /* Table style */
+
+  .demo-table {
+    width: 100%;
+  }
+  
+  .demo-button-container {
+    padding-bottom: 16px;
+  }
+  
+  .demo-button + .demo-button {
+    margin-left: 8px;
+  }

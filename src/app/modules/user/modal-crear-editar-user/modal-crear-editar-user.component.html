@@ -1,0 +1,78 @@
+<div class="modal-header title">
+    <h3 class="modal-title"> {{ isEditMode ? 'EDITAR USUARIO' : 'CREAR USUARIO' }}</h3>
+  </div>
+
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div class="row mt-3">
+        <div class="col-4">
+            <mat-form-field>
+            <mat-label>Nombres</mat-label>
+            <input matInput formControlName="nombres" placeholder="Nombres" required />
+            <mat-error *ngIf="form.get('nombres')?.hasError('required')">Este campo es requerido</mat-error>
+          </mat-form-field> 
+        </div>
+
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Apellidos</mat-label>
+              <input matInput formControlName="apellidos" placeholder="Apellidos" required />
+              <mat-error *ngIf="form.get('apellidos')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field> 
+        </div>
+
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Fecha de nacimiento</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" required />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="form.get('fechaNacimiento')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+          </div>
+
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Correo</mat-label>
+                 <input matInput formControlName="email" placeholder="Email" required />
+                 <mat-error *ngIf="form.get('email')?.hasError('required')">Este campo es requerido</mat-error>
+               </mat-form-field>
+        </div>
+
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Numero de Documento</mat-label>
+                 <input matInput formControlName="numeroDocumento" type="number" placeholder="Número de Documento" required />
+                 <mat-error *ngIf="form.get('numeroDocumento')?.hasError('required')">Este campo es requerido</mat-error>
+               </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Area</mat-label>
+              <input matInput formControlName="area" type="number" placeholder="Área" required />
+              <mat-error *ngIf="form.get('numeroDocumento')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Salario</mat-label>
+              <input matInput formControlName="salario" type="number" placeholder="Salario" required />
+              <mat-error *ngIf="form.get('numeroDocumento')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Estado</mat-label>
+              <mat-select formControlName="estado">
+                <mat-option value="Activo">Activo</mat-option>
+                <mat-option value="Inactivo">Inactivo</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onSave()" cdkFocusInitial>{{ isEditMode ? 'Actualizar' : 'Crear' }}</button>
+</mat-dialog-actions>

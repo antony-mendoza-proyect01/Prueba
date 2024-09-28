@@ -1,0 +1,35 @@
+<div class="content mt-3 login-container">
+    <div class="content d-flex justify-content-center align-items-center vh-100">
+      <div class="col-md-5">
+        <div class="card fondo">
+          <div class="card-header head">
+            <img class="imgini" src="assets/img/login.png" alt="Login Icon">
+          </div>
+          <div class="card-body">
+            <form [formGroup]="form" class="container">
+              <mat-form-field class="input-100">
+                <mat-label>Usuario</mat-label>
+                <input type="email" matInput formControlName="username" autocomplete="off">
+                <mat-error *ngIf="form.get('username')?.hasError('required')">Este campo es requerido</mat-error>
+              </mat-form-field>
+    
+              <mat-form-field class="input-100 mt-1">
+                <mat-label>Contraseña</mat-label>
+                <input [type]="hidePassword ? 'password' : 'text'"  matInput formControlName="password" autocomplete="off">
+                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                  <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+                <mat-error *ngIf="form.get('password')?.hasError('required')">Este campo es requerido</mat-error>
+              </mat-form-field>
+    
+              <button [disabled]="form.invalid" (click)="login()" class="btn nuevo">INICIAR SESIÓN</button>
+    
+              <div class="text-end mt-2">
+                <a class="link-offset-2 link-underline link-underline-opacity-75" target="_blank">Recuperar contraseña</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,54 @@
+{
+  "login": [
+    {
+      "id": "1",
+      "username": "antoni-6191@hotmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "2",
+      "username": "tony@hotmail.com",
+      "password": "123456"
+    }
+  ],
+  "users": [
+    {
+      "nombres": "Tony",
+      "apellidos": "Mendoza Hernandez",
+      "fechaNacimiento": "2024-09-27T05:00:00.000Z",
+      "email": "tony@hotmail.com",
+      "numeroDocumento": 1234567,
+      "area": 1,
+      "salario": 1496,
+      "estado": "Activo",
+      "id": "1"
+    },
+    {
+      "nombres": "Meitony",
+      "apellidos": "Meitony",
+      "fechaNacimiento": "1999-05-10",
+      "email": "antoni-6191@hotmail.com",
+      "numeroDocumento": 100515151,
+      "area": 1,
+      "salario": 4,
+      "estado": "Activo",
+      "id": "ec3c"
+    }
+  ],
+  "areas": [
+    {
+      "id": "1",
+      "codigo": 1,
+      "nombre": "Desarrollo",
+      "lider": 1234567,
+      "estado": "Activo"
+    },
+    {
+      "id": "2",
+      "codigo": 2,
+      "nombre": "Marketing",
+      "lider": 2345678,
+      "estado": "Activo"
+    }
+  ]
+}
