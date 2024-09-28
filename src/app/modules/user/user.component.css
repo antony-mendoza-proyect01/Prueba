@@ -1,50 +1,5 @@
-.head{
-    background: linear-gradient(45deg, #3498db ,  #78b5df  );
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-  
-  table {
-    max-width: 100%;
-  }
-  .table-container {
-    overflow-x: auto;
-  }
-  
-  .excel{
-    border-radius: 50px;
-    border: none;
-    margin: 4px;
-    background: linear-gradient(45deg, #359835, #0e6e0e);
-    color: white;
-    padding: 5px 20px;
-    font-size: 16px;
-  }
-  
-  .mat-button-base {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-  
-  .botones{
-    border-radius: 50px;
-    margin: 5px;
-    background: linear-gradient(45deg, #6ca3c7,  #2286c9 );
-    border: none;
-    color: #fff;
-    padding: 3px 15px;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-
-  
-  
+.table-container {
+  overflow-x: auto;
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}

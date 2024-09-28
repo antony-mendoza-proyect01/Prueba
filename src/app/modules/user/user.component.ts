@@ -7,6 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { IArea } from 'src/app/data/interfaces/IArea';
+import { AreaService } from 'src/app/data/services/area.service';
 
 @Component({
   selector: 'app-user',
@@ -15,6 +17,8 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class UserComponent {
   users: IUser[] = [];
+  areas: IArea[] = []; 
+
   editingUserId: number | null = null;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -23,7 +27,7 @@ export class UserComponent {
   displayedColumns: string[] = [ 'nombres','apellidos', 'fechaNacimiento', 'email', 'numeroDocumento', 'area', 'salario', 'estado', 'acciones'];
   dataSource = new MatTableDataSource<any>();
 
-  constructor(private userService: UserService, private toastr: ToastrService, private dialog: MatDialog) {  }
+  constructor(private userService: UserService, private toastr: ToastrService, private dialog: MatDialog, private areaService: AreaService) {  }
 
   ngOnInit() {
     this.loadUsers();
@@ -33,22 +37,34 @@ export class UserComponent {
 
   async loadUsers() {
     this.userService.getUsers().subscribe({
-     next: (data) => {
-       if (data) {
-         this.dataSource.data = data;
-         console.log(data,'CARGAR EMTREVISTA' )
-         this.dataSource._updateChangeSubscription();
-       } else {
-         console.log('No se encontraron datos');
-       }
-     },
-     error: (e) => {
-       this.toastr.warning('Ha ocurrido un error al obtener las entrevistas', 'Alerta');
-       console.log('Ha ocurrido un error');
+      next: (data) => {
+        if (data) {
+          this.dataSource.data = data;
+          this.dataSource.data.forEach(usuario => {
+            const area = this.areas.find(a => a.id === usuario.area);
+            usuario.areaNombre = area ? area.nombre : 'No hay';
+          });
+          this.dataSource._updateChangeSubscription();
+        } else {
+          console.log('No se encontraron datos');
+        }
+      },
+      error: (e) => {
+        this.toastr.warning('Ha ocurrido un error al obtener las entrevistas', 'Alerta');
+        console.log('Ha ocurrido un error');
+      },
+    });
+  }
+ getAreas(): void {
+  this.areaService.getAreas().subscribe(data => {
+    this.areas = data;
+    this.users.forEach(usuario => {
+      const area = this.areas.find(a => a.id === usuario.area);
+      usuario.areaNombre = area ? area.nombre : 'No hay'; // Asignar el nombre del área
+    });
+  });
+}
 
-     },
-   });
- }
  openDialog(id: number) {
   if (id === 0) {
     const dialogRef = this.dialog.open(ModalCrearEditarUserComponent, {

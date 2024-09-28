@@ -1,8 +1,8 @@
 <app-menu></app-menu>
-<div class="container mt-3">
+<div class="container mt-3 ">
     <h1  class="text-center">Gestión de Areas</h1>
     <button mat-raised-button color="primary" (click)="openDialog(0)">Crear Area</button>
-    
+    <div class="table-container">
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 demo-table">
         <ng-container matColumnDef="codigo">
           <th mat-header-cell *matHeaderCellDef> Codigo de area </th>
@@ -35,6 +35,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+    </div>
     <div class="card-footer text-body-secondary">
         <mat-paginator [pageSizeOptions]="[10, 20, 35]" showFirstLastButtons
                        aria-label="Select page of periodic elements">

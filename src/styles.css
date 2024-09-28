@@ -113,3 +113,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .demo-button + .demo-button {
     margin-left: 8px;
   }
+  /* Home Style */
+  /*INICIO*/
+/* Tarjetas */
+.hvr-grow {
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100% !important;
+  height: 90% !important; /* Ajustar según el tamaño deseado */
+}
+
+.imgTransicio,
+.imgComponente {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Efecto de Ampliación */
+.enlarge-image {
+  transition: transform 0.3s ease;
+}
+
+.enlarge-image:hover {
+  transform: scale(1.1);
+}
+
+/* Componente General */
+.component {
+  margin-top: -1% !important;
+  height: 95% !important; /* Ajustar según el tamaño deseado */
+}
+
+/* Fuente e Información */
+.tamañof {
+  margin-top: 20%;
+}
+
+.imgFuente {
+  width: 100%;
+  height: auto;
+}

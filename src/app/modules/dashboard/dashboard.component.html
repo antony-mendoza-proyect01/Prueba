@@ -1,0 +1,69 @@
+<app-menu></app-menu>
+<div class="dashboard">
+  <mat-card>
+    <h1  class="text-center">Panel de Control</h1>
+    <mat-card-content>
+      <div class="statistics">
+        <h2>Datos Mínimos</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>Total de Usuarios</mat-label>
+          <input matInput [value]="totalActiveUsers + totalInactiveUsers" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Usuarios Activos</mat-label>
+          <input matInput [value]="totalActiveUsers" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Usuarios Inactivos</mat-label>
+          <input matInput [value]="totalInactiveUsers" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Total de Áreas</mat-label>
+          <input matInput [value]="totalActiveAreas + totalInactiveAreas" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Áreas Activas</mat-label>
+          <input matInput [value]="totalActiveAreas" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Áreas Inactivas</mat-label>
+          <input matInput [value]="totalInactiveAreas" readonly>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Listado de Líderes de Área</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let leader of areaLeaders">{{ leader.nombre }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <div>
+    <h2>Usuarios por Área </h2>
+    <canvas #userBarChart></canvas>
+  </div>
+
+  <div>
+    <h2>Usuarios por Activo/Inactivo</h2>
+    <canvas #userLineChart></canvas>
+  </div>
+
+  <div>
+    <h2>Áreas Activo/Inactivo</h2>
+    <canvas #areaChart></canvas>
+  </div>
+
+  <div>
+    <h2>Usuarios Activo/Inactivo</h2>
+    <canvas #userChart></canvas>
+  </div>
+
+  <div>
+    <h2>Líderes por Área listado</h2>
+    <canvas #leadersChart></canvas>
+  </div>
+</div>

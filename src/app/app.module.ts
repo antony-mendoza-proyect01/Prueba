@@ -14,6 +14,7 @@ import { UserComponent } from './modules/user/user.component';
 import { AreaComponent } from './modules/area/area.component';
 import { ModalCrearEditarUserComponent } from './modules/user/modal-crear-editar-user/modal-crear-editar-user.component';
 import { ModalCrearEditarAreaComponent } from './modules/area/modal-crear-editar-area/modal-crear-editar-area.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ModalCrearEditarAreaComponent } from './modules/area/modal-crear-editar
     UserComponent,
     AreaComponent,
     ModalCrearEditarUserComponent,
-    ModalCrearEditarAreaComponent
+    ModalCrearEditarAreaComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

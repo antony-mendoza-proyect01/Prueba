@@ -1,0 +1,13 @@
+.hvr-grow {
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100% !important;
+    height: 86% !important; /* Cambiar el valor según el tamaño deseado */
+    transition: transform 0.3s ease; /* Transición suave */
+  }
+  
+  .hvr-grow:hover {
+    transform: scale(1.05); /* Aumentar el tamaño al pasar el puntero */
+  }

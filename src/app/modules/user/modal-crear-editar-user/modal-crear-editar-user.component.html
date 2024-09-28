@@ -47,11 +47,14 @@
                </mat-form-field>
         </div>
         <div class="col-4">
-            <mat-form-field>
-                <mat-label>Area</mat-label>
-              <input matInput formControlName="area" type="number" placeholder="Área" required />
-              <mat-error *ngIf="form.get('numeroDocumento')?.hasError('required')">Este campo es requerido</mat-error>
-            </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Area</mat-label>
+            <mat-select [(value)]="selectedArea" formControlName="area">
+              <mat-option *ngFor="let area of areas" [value]="area.id">
+                {{ area.nombre }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="col-4">
             <mat-form-field>

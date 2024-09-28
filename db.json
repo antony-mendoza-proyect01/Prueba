@@ -9,6 +9,11 @@
       "id": "2",
       "username": "tony@hotmail.com",
       "password": "123456"
+    },
+    {
+      "id": "3",
+      "username": "admin@hotmail.com",
+      "password": "admin123"
     }
   ],
   "users": [
@@ -18,7 +23,7 @@
       "fechaNacimiento": "2024-09-27T05:00:00.000Z",
       "email": "tony@hotmail.com",
       "numeroDocumento": 1234567,
-      "area": 1,
+      "area": "1",
       "salario": 1496,
       "estado": "Activo",
       "id": "1"
@@ -29,10 +34,43 @@
       "fechaNacimiento": "1999-05-10",
       "email": "antoni-6191@hotmail.com",
       "numeroDocumento": 100515151,
-      "area": 1,
+      "area": "1",
       "salario": 4,
       "estado": "Activo",
       "id": "ec3c"
+    },
+    {
+      "nombres": "Prueba",
+      "apellidos": "Prueba",
+      "fechaNacimiento": "2024-09-28T05:00:00.000Z",
+      "email": "Prueba@hotmail.comm",
+      "numeroDocumento": 101,
+      "area": "9d33",
+      "salario": 3,
+      "estado": "Activo",
+      "id": "bcba"
+    },
+    {
+      "id": "6367",
+      "nombres": "Prueba 3",
+      "apellidos": "Prueba 3",
+      "fechaNacimiento": "2024-09-28T05:00:00.000Z",
+      "email": "Prueba@hotmail.com",
+      "numeroDocumento": 101111,
+      "area": "9d33",
+      "salario": 101,
+      "estado": "Inactivo"
+    },
+    {
+      "id": "fc23",
+      "nombres": "Prueba 4",
+      "apellidos": "Prueba 4",
+      "fechaNacimiento": "2024-09-28T05:00:00.000Z",
+      "email": "Prueba@hotmail.com",
+      "numeroDocumento": 10111,
+      "area": "1",
+      "salario": 101,
+      "estado": "Inactivo"
     }
   ],
   "areas": [
@@ -47,6 +85,20 @@
       "id": "9d33",
       "codigo": 101,
       "nombre": "Desarrollo 1",
+      "lider": "Antony",
+      "estado": "Activo"
+    },
+    {
+      "id": "aa33",
+      "codigo": 2,
+      "nombre": "Marketing",
+      "lider": "Luisa",
+      "estado": "Inactivo"
+    },
+    {
+      "id": "6984",
+      "codigo": 3,
+      "nombre": "Desarrollador Frontend",
       "lider": "Antony",
       "estado": "Activo"
     }

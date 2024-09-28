@@ -1,1 +1,22 @@
 <app-menu></app-menu>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <ng-container *ngFor="let home of menuRol">
+      <div class="col-md-2">
+        <a [routerLink]="home.ruta" class="card-link">
+          <br/><br/>
+          <div class="card mt-4 hvr-grow"> <!-- Clase hvr-grow aplicada aquí -->
+            <div class="position-relative">
+              <img [src]="home.urlImagen" class="imgTransicio">
+              <div class="card-body">
+                <h2 class="card-title">{{ home.titulo }}</h2>
+                <p class="card-text">{{ home.contenido }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</div>

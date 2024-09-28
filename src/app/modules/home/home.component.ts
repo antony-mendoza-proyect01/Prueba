@@ -10,4 +10,25 @@ import { AuthService } from 'src/app/data/services/auth.service';
 })
 export class HomeComponent {
 
+
+  menuRol = [
+    {
+      urlImagen: '/assets/img/usuarios.jpg',
+      titulo: 'USUARIOS',
+      contenido: 'Entra sesion podra visalizar,crear, editar y eliminar usuarios',
+      ruta: '/User' 
+    },
+    {
+      urlImagen: '/assets/img/areas.jpg',
+      titulo: 'AREAS',
+      contenido: 'Entra sesion podra visalizar,crear, editar y eliminar areas',
+      ruta: '/Area' 
+    },
+    {
+      urlImagen: '/assets/img/dashboard.jpg',
+      titulo: 'DASHBOARD',
+      contenido: 'Visualizacion de dashboard',
+      ruta: '/Dashboard'
+    }
+  ];
 }

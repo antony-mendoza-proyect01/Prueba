@@ -1,7 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { IArea } from 'src/app/data/interfaces/IArea';
 import { IUser } from 'src/app/data/interfaces/IUser';
+import { AreaService } from 'src/app/data/services/area.service';
 
 @Component({
   selector: 'app-modal-crear-editar-user',
@@ -11,11 +13,15 @@ import { IUser } from 'src/app/data/interfaces/IUser';
 export class ModalCrearEditarUserComponent {
   form: FormGroup;
   isEditMode: boolean;
+  areas: IArea[] = [];
+  selectedArea: number | null = null; // Variable to hold the selected area ID
 
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<ModalCrearEditarUserComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: IUser
+    @Inject(MAT_DIALOG_DATA) public data: IUser,
+    private areaService: AreaService
+    
   ) {
     this.isEditMode = !!data;
     this.form = this.fb.group({
@@ -30,14 +36,24 @@ export class ModalCrearEditarUserComponent {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAreas(); // Fetch areas on initialization
+
+  }
+
+  getAreas() {
+    this.areaService.getAreas().subscribe((data: IArea[]) => {
+      this.areas = data;
+    });
+  }
 
   onSave(): void {
     if (this.form.valid) {
-      this.dialogRef.close(this.form.value); 
+      this.dialogRef.close(this.form.value); // Close dialog and return form value
     }
   }
+
   onCancel(): void {
-    this.dialogRef.close(); 
+    this.dialogRef.close(); // Just close the dialog
   }
 }

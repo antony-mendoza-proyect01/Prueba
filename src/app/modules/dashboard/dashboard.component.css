@@ -1,0 +1,22 @@
+.dashboard {
+    padding: 20px;
+  }
+  
+  .statistics {
+    margin-bottom: 20px;
+  }
+  
+  .leaders {
+    margin-top: 20px;
+  }
+  
+  canvas {
+    max-width: 80%;
+    max-height: 200px; /* Set max height for smaller charts */
+  }
+  .dashboard {
+    padding: 20px;
+  }
+  .statistics {
+    margin-bottom: 20px;
+  }

@@ -30,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { NgChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [],
@@ -65,7 +67,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatIconModule,
     MatDialogModule,
     MatTableModule,
-    MatSortModule,
+    MatSortModule, 
+    NgChartsModule ,
+
+    
   ],
   exports: [
     CommonModule,
@@ -101,6 +106,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatDialogModule,
     MatTableModule,
     MatSortModule,
+    NgChartsModule 
+
   ]
 })
 export class MaterialModule { }
